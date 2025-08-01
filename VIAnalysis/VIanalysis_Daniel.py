@@ -1,16 +1,11 @@
-# -*- coding: utf-8 -*-
 """
-Created on Fri Feb 17 13:56:15 2023
-
+Analysis of the VI data measrued by a voltage/current probe for the Redline Power Supplies
 @author: Achim
 """
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 from scipy import optimize
-
-datafilev = 'C2--75V-2ndclosest-fullspec.txt'
-datafilei = 'C1--75V-2ndclosest-fullspec.txt'
 
 datafilev = 'C2.dat'
 datafilei = 'C1.dat'
