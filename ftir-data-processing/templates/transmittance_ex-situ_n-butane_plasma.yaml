@@ -1,0 +1,55 @@
+input data location: ''
+output data location: ''
+conditions:
+  path_length_cm: 80.0
+  pressure_atm: 1.0
+  gas_temperature_kelvin: 293.
+  instrumental_broadening_sigma_range:
+    - 0.
+    - 1.
+  wavenumber_offset_range:
+    - -1
+    - +1
+processing_steps:
+  CH4:
+    method: fit_equilibrium_spectra
+    hitran_database_file: D:\Promotie\data\database\ch4_database.sqlite
+    baseline_polynomial_order: 0
+    fit_derivative: true
+    wavenumber_range_spectrum:
+      - 3000
+      - 3200
+    wavenumber_range_baseline_correction:
+      - 2500
+      - 2600
+  CO:
+    method: fit_equilibrium_spectra
+    hitran_database_file: D:\Promotie\data\database\co_database-He.sqlite
+    baseline_polynomial_order: 0
+    wavenumber_range_spectrum:
+    - 1950
+    - 2225
+    wavenumber_range_baseline_correction:
+    - 1975
+    - 2025
+  CO2:
+    method: fit_equilibrium_spectra
+    hitran_database_file: D:\Promotie\data\database\co2_database-He.sqlite
+    baseline_polynomial_order: 0
+    wavenumber_range_spectrum:
+    - 2250
+    - 2400
+    wavenumber_range_baseline_correction:
+    - 2400
+    - 2500
+  CO2_v1+v3:
+    method: fit_equilibrium_spectra
+    hitran_database_file: D:\Promotie\data\database\co2_database-He.sqlite
+    baseline_polynomial_order: 0
+    wavenumber_range_spectrum:
+    - 3500
+    - 3800
+    baseline wavenumber_range_baseline_correction range:
+    - 2400
+    - 2500
+

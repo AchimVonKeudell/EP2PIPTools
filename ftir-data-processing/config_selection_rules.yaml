@@ -1,0 +1,52 @@
+# defining the segments of the directory structure
+path_structure:
+  # e.g. ..\data\raw\'campaign'\'dataset'\'data_folder'\'data file'
+  levels:   # refers the order (using the python list logic). the current order follows the example above
+    campaign: -3
+    dataset: -2
+    data_folder: -1    # remove if there is not 'data_folder'
+
+  # e.g. ..\data\output\'campaign'\'data_folder'\'dataset'\'data file'
+  output:   # refers the order (using the python list logic). the current order follows the example above
+    campaign: -3
+    dataset: -1
+    data_folder: -2    # remove if there is not 'data_folder'
+
+# Rules are checked in order - first match wins (thus put specific keywords higher)
+rules:
+  # N2+O2 plasma for a IRRAS measurement. Fits N2O(g), NO(g), NO2(g), O3(g), and adsorbed nitrate contributions
+  - name: 'IRRAS NOx formation'
+    keywords:
+      campaign: 'IRRAS'
+      dataset: 'N2+O2'
+    config: 'templates\IRRAS\NOx_plasma.yaml'
+
+  # CH4 containing plasma for a IRRAS measurement, fits CH4(g)
+  - name: 'IRRAS CH4 plasma'
+    keywords:
+      campaign: 'IRRAS'
+      dataset: 'CH4'
+    config: 'templates\IRRAS\CH4_plasma.yaml'
+
+  - name: 'IRRAS NH3 synthesis'
+    keywords:
+      campaign: 'IRRAS'
+      dataset: 'N2+H2'
+    config: 'templates\IRRAS\NH3_plasma.yaml'
+
+  # O2 containing plasma for a IRRAS measurement, fits O3(g)
+  - name: 'IRRAS O2 plasma'
+    keywords:
+      campaign: 'IRRAS'
+      dataset: 'O2'
+    config: 'templates\IRRAS\O2_plasma.yaml'
+
+  # pretreatment of substrates before IRRAS measurements
+  - name: 'pretreatment-IRRAS'
+    keywords:
+      campaign: 'IRRAS'
+      dataset:
+    config: 'templates\IRRAS\substrate_cleaning_step.yaml'
+
+
+default_config: 'templates\default.yaml'
