@@ -1,0 +1,17 @@
+sticking coefficients for metals and Al2O3 obtained from Hong et al. (2017) 10.1088/1361-6463/aa6229, NOTE: it's a modification factor for 17 and 18.
+#   reactions   gamma_metal  gamma_Al2O3    gamma_SiOx  source_SiOx
+1   N+*->Ns 1   1e-1    0
+2   H+*->Hs 1   1e-2    0
+3   NH+*->NHs   1   1e-2    0
+4   NH2+*->NH2s 1   1e-2    0
+5   N+Ns->N2+*  6e-3    6e-5    2e-4    Kim and Boudart. (1991) 10.1021/la00060a016
+6   H+Hs->H2+*  1.5e-3  1.5e-6  3e-5    Kim and Boudart. (1991) 10.1021/la00060a016, 1.5e-3
+7   N+Hs->NHs   1e-2    1e-3    0
+8   NH+Hs->NH2s 1e-2    1e-3    0
+9   NH2+Hs->NH3+*   1e-2    1e-3    0
+10  H+Ns->NHs   8e-3    8e-4    0
+11  H+NHs->NH2s 8e-3    8e-4    0
+12  H+NH2s->NH3+*   8e-3    8e-4    0
+13  H2+NHs->NH3+*   0    0    0 Hong used 8e-4 and 8e-5 respectively
+17  N2+2*->2Ns  1   1e-2    0   these are factors, not sticking coefficients
+18  H2+2*->2Hs  1   1e-2    0   these are factors, not sticking coefficients

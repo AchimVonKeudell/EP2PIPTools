@@ -1,0 +1,49 @@
+input data location: ''
+output data location: ''
+conditions:
+  path_length_cm: 42.6
+  pressure_atm: 0.00493
+  gas_temperature_kelvin: 300.0
+processing_steps:
+  pre_treatment:
+    method: baseline_correction_and_air_correction
+    baseline_polynomial_order: 0
+    baseline_x_points:
+    - 900
+    - 2000
+    - 2500
+    - 3000
+    wavenumber_range_spectrum:
+    - 600
+    - 4000
+    contributions:
+      H2O:
+        method: synthetic_spectrum
+        hitran_database_file: D:\Promotie\data\database\h2o_database.sqlite
+        pressure_atm: 1.0
+        molar_fraction_reference: 0.0005
+        gas_temperature_kelvin: 295.0
+        path_length_cm: 20.0
+        instrumental_broadening_sigma: 1.05
+        wavenumber_resolution: 0.02
+        absorbance_wavenumber_bands:
+        - 1000
+        - 2200
+      CO2_v2:
+        method: reference_spectrum
+        reference_spectrum_file_name: D:\Promotie\data\output\23_IRRAS-NOx\20250214_IRRAS-NOx-Fe-foil-O2cleaning\FTIR\1_He+O2_plasma\spectra\150sccmHe+20sccmO2--0001.dat
+        absorbance_wavenumber_bands:
+        - 600
+        - 750
+      CO2_v3:
+        method: reference_spectrum
+        reference_spectrum_file_name: D:\Promotie\data\output\23_IRRAS-NOx\20250214_IRRAS-NOx-Fe-foil-O2cleaning\FTIR\1_He+O2_plasma\spectra\150sccmHe+20sccmO2--0001.dat
+        absorbance_wavenumber_bands:
+        - 2200
+        - 2400
+      CO2_v1+v3:
+        method: reference_spectrum
+        reference_spectrum_file_name: D:\Promotie\data\output\23_IRRAS-NOx\20250214_IRRAS-NOx-Fe-foil-O2cleaning\FTIR\1_He+O2_plasma\spectra\150sccmHe+20sccmO2--0001.dat
+        absorbance_wavenumber_bands:
+          - 3500
+          - 3800
