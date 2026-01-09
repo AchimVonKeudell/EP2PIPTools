@@ -1,0 +1,17 @@
+Source:  Kim and Boudart. (1991) 10.1021/la00060a016 for 5&6, and the rest from Al2O3 Hong et al. (2017) 10.1088/1361-6463/aa6229, NOTE: it's a modification factor for 17 and 18.
+#   reactions   gamma
+1   N+*->Ns 1e-1
+2   H+*->Hs 1e-2
+3   NH+*->NHs   1e-2
+4   NH2+*->NH2s 1e-2
+5   N+Ns->N2+*  2e-4
+6   H+Hs->H2+*  3e-5
+7   N+Hs->NHs   1e-3
+8   NH+Hs->NH2s 1e-3
+9   NH2+Hs->NH3+*   1e-3
+10  H+Ns->NHs   8e-4
+11  H+NHs->NH2s 8e-4
+12  H+NH2s->NH3+*   8e-4
+13  H2+NHs->NH3+*   8e-5
+17  N2+2*->2Ns  1e-2
+18  H2+2*->2Hs  1e-2

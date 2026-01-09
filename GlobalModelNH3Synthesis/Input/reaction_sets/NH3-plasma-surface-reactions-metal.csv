@@ -1,0 +1,23 @@
+# reactions 5+6 from [Kim and Boudart. (1991) 10.1021/la00060a016],
+# other reactions from [Hong et al. (2017) 10.1088/1361-6463/aa6229]
+# 17 and 18 are approximated for N2(v=1) and H2(v=1)
+# step,reaction,rate_coefficient_function
+1,N + s -> Ns,EleyRidealReaction(1.0 -;He)
+2,H + s -> Hs,EleyRidealReaction(1.0 -;He)
+3,NH + s -> NHs,EleyRidealReaction(1.0 -;He)
+4,NH2 + s -> NH2s,EleyRidealReaction(1.0 -;He)
+5,N + Ns -> N2 + s,EleyRidealReaction(6e-3 -;He)
+6,H + Hs -> H2 + s,EleyRidealReaction(1.5e-3 -;He)
+7,N + Hs -> NHs,EleyRidealReaction(1e-2 -;He)
+8,NH + Hs -> NH2s,EleyRidealReaction(1e-2 -;He)
+9,NH2 + Hs -> NH3 + s,EleyRidealReaction(1e-2 -;He)
+10,H + Ns -> NHs,EleyRidealReaction(8e-3 -;He)
+11,H + NHs -> NH2s,EleyRidealReaction(8e-3 -;He)
+12,H + NH2s -> NH3 + s,EleyRidealReaction(8e-3 -;He)
+# 13,H2 + NHs -> NH3 + s,EleyRidealReaction(8e-4 -;He)  # Is unlikely, hence removed it
+13,H2 + NHs -> NH3 + s,EleyRidealReaction(0. -;He)
+14,Ns + Hs -> NHs + s,LangmuirHinshelwoodReaction(4.3e12 1/s;1.099 eV;0.2 eV)
+15,NHs + Hs -> NH2s + s,LangmuirHinshelwoodReaction(4.3e12 1/s;0.3 eV;0.2 eV)
+16,NH2s + Hs -> NH3 + 2 s,LangmuirHinshelwoodReaction(4.3e12 1/s;0.2 eV;0.2 eV)
+17,N2 + 2 s -> 2 Ns,EleyRidealReaction(2e-6 -;He)
+18,H2 + 2 s -> 2 Hs,EleyRidealReaction(1e-1 -;He)

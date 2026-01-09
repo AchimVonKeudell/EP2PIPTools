@@ -1,0 +1,5 @@
+values obtained from Hong et al. (2017) 10.1088/1361-6463/aa6229
+#   reactions   activation_barrier_eV   diffusion_energy_barrier_metal_eV   diffusion_energy_barrier_Al2O3_eV
+14  Ns+Hs->NHs+*    1.099   0.2 0.5
+15  NHs+Hs->NH2s+*  0.3 0.2 0.5
+16  NH2s+Hs->NH3+2* 0.2 0.2 0.5

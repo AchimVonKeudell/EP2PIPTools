@@ -1,0 +1,322 @@
+LXCat, www.lxcat.net
+Generated on 11 Oct 2024. All rights reserved.
+
+RECOMMENDED REFERENCE FORMAT
+- IST-Lisbon database, www.lxcat.net, retrieved on October 11, 2024.
+Be aware that some databases and solvers can additionally have instructions how to reference corresponding data.
+Please check below in the headers of databases.
+
+CROSS SECTION DATA FORMAT
+In downloaded files, each collision process is defined by a block consisting of
+1st line
+Keyword in capitals indicating the type of the collision. Possible collision types are elastic, effective, excitation,
+ionization, or attachment (capital letters required, key words are case sensitive), where "elastic" is used to denote
+the elastic momentum transfer cross section and where "effective" denotes the total momentum transfer cross section (sum
+of elastic momentum transfer and total inelastic cross sections).  The latter is useful for solving the Boltzmann
+equation in the 2-term approximation.
+2nd line
+Name of the target particle species. This name is a character string, freely chosen by the user, e.g. "Ar". Optionally
+for excitation processes, the name of the corresponding excited state can be specified on the same line, separated from
+the first name either by arrow "->" (dash + greater than) or by double-head arrow "<->" (less than + dash +
+greater than), e.g. "Ar -> Ar*" and "Ar <-> Ar*", respectively. In the later case BOLSIG+ will automatically
+define the inverse superelastic process, constructing the superelastic cross-section by detailed balancing, and
+considering the indicated excited state as the target. In this case, the ratio of statistical weights must be input in
+the 3rd line (see below).
+3rd line
+For elastic and effective collisions, the ratio of the electron mass to the target particle mass. For excitation or
+ionization collisions, the electron energy loss (nominally the threshold energy) in eV. For attachment, the 3rd line is
+missing. In case of an excitation process where an excited state has been indicated on the 2nd line using double-head
+arrow "<->", the 3rd line must specify also ratio of the statistical weights of the final state to the initial state
+as the second parameter in 3rd line this is needed by BOLSIG+ to calculate the de-excitation cross-section. The
+statistical weight ratio, if given, will also be used by the automatic superelastics option in BOLSIG+. If this ratio is
+not provided then BOLSIG+ will assume it unity.
+from 4th line (optionally)
+User comments and reference information, maximum 100 lines. The only constraint on format is that these comment lines
+must not start with a number.
+Finally
+Table of the cross section as a function of energy. The table starts and ends by a line of dashes "------" (at least 5),
+and has otherwise two numbers per line: the energy in eV and the cross section in m2.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+DATABASE:         IST-Lisbon database
+PERMLINK:         www.lxcat.net/IST-Lisbon
+DESCRIPTION:      IST-Lisbon database contains up-to-date electron-neutral scattering cross sections (together with the
+                  measured swarm parameters used to validate these data), resulting from the research effort of the
+                  Group N-Plasmas Reactive: Modelling and Engineering (N-PRiME) with IPFN/IST (Instituto de Plasmas e
+                  Fusao Nuclear / Instituto Superior Tecnico), Lisbon, Portugal.  The data, compiled from the
+                  literature, correspond to contributions from different authors (see detailed references in the
+                  database). For each gas the database presents a COMPLETE SET of cross sections, validated against
+                  measured swarm parameters by solving the two-term homogeneous electron Boltzmann equation. In most
+                  cases, predictions are in agreement with measurements within 1-20%, for reduced electric fields E/N ~
+                  1e-4 - 500 Td. To improve predictions at low E/N, some sets need to be completed with rotational cross
+                  sections, also available in the database.
+CONTACT:          LL Alves and V Guerra
+                  e-mail: llalves@@tecnico.ulisboa.pt
+HOW TO REFERENCE: L.L. Alves, ''The IST-Lisbon database on LXCat'' J. Phys. Conf. Series 2014, 565, 1
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+************************************************************************************************************************
+
+COMMENT: M. Santos, C. Noel, T. Belmonte and L.L. Alves ''Microwave capillary plasmas in helium at atmospheric pressure'' 2014 J.
+         Phys. D: Appl. Phys. 47 265201 1-18. Cross sections were defined for energies up to 1 keV and were adjusted as to yield
+         good agreement between calculated and measured swarm parameters. The calculations use a two-term Boltzmann solver with
+         the SST growth model. The cross sections are handled choosing a linear interpolation scheme with no extrapolation after
+         the last energy point, within energy-grids with 1000 points and constant step-sizes comprised between 0.01 and 1 eV,
+         according to the (low/high) reduced-field values considered.
+         The present cross section set updates its previous version, published in L.L. Alves et al ''Comparisons of sets of
+         electronâ€“neutral scattering cross sections and swarm parameters in noble gases: II. Helium and neon'' 2013 J. Phys. D:
+         Appl. Phys. 46 334002 1-22.
+         The elastic momentum-transfer cross section corresponds to the one proposed by Crompton et al at low energies, Milloy
+         and Crompton at intermediate energies, and Belmonte et al at high energies. The inelastic electron cross sections for
+         transitions n(2s+1)S -> nâ€™(2sâ€™+1)lâ€™ with n < 3, 1 < nâ€™ < 5, lâ€™ = S,P,D,F are obtained from
+         Belmonte et al, by multiplying the excitation cross sections for the metastables and the n3P states by factors of 0.31
+         and 0.60, respectively, and by multiplying the excitation cross sections for the n1P states by a factor of 1.66.
+         For the rest of transitions, the cross sections are obtained from the analytical expressions proposed by Ralchenko et
+         al.
+         The ionization cross section is taken from the measurements of Rapp and Englander-Golden, for electron energies below
+         100 eV, and from Belmonte et al, between 100â€“1000 eV.
+
+********************************************************** He **********************************************************
+
+EXCITATION
+He <-> He(2S3)
+ 1.982000e+1  3.000000e+0
+SPECIES: e / He
+PROCESS: E + He <-> E + He(2S3), Excitation
+PARAM.:  E = 19.82 eV, g1/g0 = 3, complete set
+COMMENT: [e + He(1S1) -> e + He(2S3), Excitation] Kato and Janev 1992 Atomic and
+COMMENT: Plasmaâˆ’Material Interaction Data for Fusion (Supplement to the Journal of Nuclear
+COMMENT: Fusion) 3 33 (multiplied by 0.31).
+UPDATED: 2017-05-12 19:55:37
+COLUMNS: Energy (eV) | Cross section (m2)
+-----------------------------
+ 1.982000e+1	0.000000e+0
+ 1.984000e+1	2.387000e-23
+ 1.990000e+1	5.270000e-23
+ 2.010000e+1	1.550000e-22
+ 2.050000e+1	1.395000e-22
+ 2.100000e+1	1.178000e-22
+ 2.300000e+1	9.300000e-23
+ 2.500000e+1	7.750000e-23
+ 3.000000e+1	5.890000e-23
+ 4.000000e+1	3.627000e-23
+ 5.000000e+1	2.468000e-23
+ 6.000000e+1	1.708000e-23
+ 7.000000e+1	1.218000e-23
+ 8.000000e+1	8.928000e-24
+ 9.000000e+1	6.727000e-24
+ 1.000000e+2	5.177000e-24
+ 1.200000e+2	3.224000e-24
+ 1.500000e+2	1.795000e-24
+ 2.000000e+2	8.184000e-25
+ 3.000000e+2	2.644000e-25
+ 4.000000e+2	1.172000e-25
+ 5.000000e+2	6.200000e-26
+ 7.000000e+2	2.381000e-26
+ 1.000000e+3	8.649000e-27
+-----------------------------
+
+EXCITATION
+He <-> He(2S1)
+ 2.062000e+1  1.000000e+0
+SPECIES: e / He
+PROCESS: E + He <-> E + He(2S1), Excitation
+PARAM.:  E = 20.62 eV, g1/g0 = 1, complete set
+COMMENT: [e + He(1S1) -> e + He(2S1), Excitation] de Heer and Jansen 1977 J. Phys. B: At. Mol.
+COMMENT: Phys. 10 3741 Belmonte et al 2007 J. Phys. D: Appl. Phys. 40 7343 (multiplied by 0.31).
+UPDATED: 2017-05-12 19:55:37
+COLUMNS: Energy (eV) | Cross section (m2)
+-----------------------------
+ 2.062000e+1	0.000000e+0
+ 2.100000e+1	7.750000e-23
+ 2.200000e+1	8.060000e-23
+ 2.300000e+1	8.370000e-23
+ 2.400000e+1	8.060000e-23
+ 2.700000e+1	7.440000e-23
+ 3.000000e+1	7.130000e-23
+ 3.500000e+1	6.665000e-23
+ 4.000000e+1	6.355000e-23
+ 4.500000e+1	6.045000e-23
+ 5.000000e+1	5.735000e-23
+ 6.000000e+1	5.270000e-23
+ 8.000000e+1	4.650000e-23
+ 1.000000e+2	4.030000e-23
+ 2.000000e+2	2.480000e-23
+ 5.000000e+2	1.240000e-23
+ 9.000000e+2	7.750000e-24
+ 1.000000e+3	7.130000e-24
+-----------------------------
+
+IONIZATION
+He -> He+
+ 2.458730e+1
+SPECIES: e / He
+PROCESS: E + He -> E + E + He+, Ionization
+PARAM.:  E = 24.5873 eV, complete set
+COMMENT: [e + He(1S1) -> e + e + He(+,1S2), Ionization] Rapp and Englander-Golden 1965 J. Chem.
+COMMENT: Phys. 43 1464 Belmonte et al 2007 J. Phys. D: Appl. Phys. 40 7343.
+UPDATED: 2017-05-12 19:55:37
+COLUMNS: Energy (eV) | Cross section (m2)
+-----------------------------
+ 2.458730e+1	0.000000e+0
+ 2.500000e+1	5.200000e-23
+ 2.550000e+1	1.140000e-22
+ 2.600000e+1	1.750000e-22
+ 2.650000e+1	2.360000e-22
+ 2.700000e+1	3.000000e-22
+ 2.750000e+1	3.630000e-22
+ 2.800000e+1	4.300000e-22
+ 2.850000e+1	4.900000e-22
+ 2.900000e+1	5.520000e-22
+ 2.950000e+1	6.200000e-22
+ 3.000000e+1	6.800000e-22
+ 3.050000e+1	7.450000e-22
+ 3.100000e+1	8.020000e-22
+ 3.150000e+1	8.640000e-22
+ 3.200000e+1	9.240000e-22
+ 3.250000e+1	9.850000e-22
+ 3.300000e+1	1.038000e-21
+ 3.350000e+1	1.091000e-21
+ 3.400000e+1	1.155000e-21
+ 3.450000e+1	1.205000e-21
+ 3.500000e+1	1.260000e-21
+ 3.550000e+1	1.310000e-21
+ 3.600000e+1	1.355000e-21
+ 3.650000e+1	1.405000e-21
+ 3.700000e+1	1.455000e-21
+ 3.750000e+1	1.500000e-21
+ 3.800000e+1	1.548000e-21
+ 3.850000e+1	1.590000e-21
+ 3.900000e+1	1.635000e-21
+ 3.950000e+1	1.675000e-21
+ 4.000000e+1	1.715000e-21
+ 4.050000e+1	1.755000e-21
+ 4.100000e+1	1.795000e-21
+ 4.150000e+1	1.835000e-21
+ 4.200000e+1	1.875000e-21
+ 4.250000e+1	1.915000e-21
+ 4.300000e+1	1.950000e-21
+ 4.350000e+1	1.985000e-21
+ 4.400000e+1	2.025000e-21
+ 4.450000e+1	2.065000e-21
+ 4.500000e+1	2.102000e-21
+ 4.550000e+1	2.140000e-21
+ 4.600000e+1	2.175000e-21
+ 4.650000e+1	2.210000e-21
+ 4.700000e+1	2.240000e-21
+ 4.750000e+1	2.270000e-21
+ 4.800000e+1	2.300000e-21
+ 4.850000e+1	2.330000e-21
+ 4.900000e+1	2.360000e-21
+ 4.950000e+1	2.390000e-21
+ 5.000000e+1	2.428000e-21
+ 5.050000e+1	2.455000e-21
+ 5.100000e+1	2.485000e-21
+ 5.150000e+1	2.515000e-21
+ 5.200000e+1	2.540000e-21
+ 5.250000e+1	2.567000e-21
+ 5.300000e+1	2.592000e-21
+ 5.350000e+1	2.620000e-21
+ 5.400000e+1	2.642000e-21
+ 5.450000e+1	2.668000e-21
+ 5.500000e+1	2.690000e-21
+ 5.550000e+1	2.712000e-21
+ 5.600000e+1	2.735000e-21
+ 5.650000e+1	2.757000e-21
+ 5.700000e+1	2.780000e-21
+ 5.750000e+1	2.800000e-21
+ 5.800000e+1	2.820000e-21
+ 5.850000e+1	2.840000e-21
+ 5.900000e+1	2.860000e-21
+ 5.950000e+1	2.879000e-21
+ 6.000000e+1	2.895000e-21
+ 6.050000e+1	2.915000e-21
+ 6.100000e+1	2.932000e-21
+ 6.150000e+1	2.950000e-21
+ 6.200000e+1	2.969000e-21
+ 6.250000e+1	2.985000e-21
+ 6.300000e+1	3.000000e-21
+ 6.350000e+1	3.020000e-21
+ 6.400000e+1	3.037000e-21
+ 6.450000e+1	3.052000e-21
+ 6.500000e+1	3.070000e-21
+ 6.550000e+1	3.087000e-21
+ 6.600000e+1	3.102000e-21
+ 6.650000e+1	3.120000e-21
+ 6.700000e+1	3.125000e-21
+ 6.750000e+1	3.150000e-21
+ 6.800000e+1	3.165000e-21
+ 6.850000e+1	3.180000e-21
+ 6.900000e+1	3.193000e-21
+ 6.950000e+1	3.209000e-21
+ 7.000000e+1	3.220000e-21
+ 7.050000e+1	3.233000e-21
+ 7.100000e+1	3.247000e-21
+ 7.150000e+1	3.260000e-21
+ 7.200000e+1	3.270000e-21
+ 7.250000e+1	3.282000e-21
+ 7.300000e+1	3.292000e-21
+ 7.350000e+1	3.306000e-21
+ 7.400000e+1	3.317000e-21
+ 7.450000e+1	3.328000e-21
+ 7.500000e+1	3.339000e-21
+ 7.550000e+1	3.350000e-21
+ 7.600000e+1	3.360000e-21
+ 7.650000e+1	3.370000e-21
+ 7.700000e+1	3.380000e-21
+ 7.750000e+1	3.390000e-21
+ 7.800000e+1	3.399000e-21
+ 7.850000e+1	3.409000e-21
+ 7.900000e+1	3.418000e-21
+ 7.950000e+1	3.427000e-21
+ 8.000000e+1	3.435000e-21
+ 8.050000e+1	3.444000e-21
+ 8.100000e+1	3.452000e-21
+ 8.150000e+1	3.461000e-21
+ 8.200000e+1	3.470000e-21
+ 8.250000e+1	3.479000e-21
+ 8.300000e+1	3.488000e-21
+ 8.350000e+1	3.495000e-21
+ 8.400000e+1	3.502000e-21
+ 8.450000e+1	3.510000e-21
+ 8.500000e+1	3.519000e-21
+ 8.550000e+1	3.525000e-21
+ 8.600000e+1	3.531000e-21
+ 8.650000e+1	3.540000e-21
+ 8.700000e+1	3.545000e-21
+ 8.750000e+1	3.550000e-21
+ 8.800000e+1	3.559000e-21
+ 8.850000e+1	3.562000e-21
+ 8.900000e+1	3.569000e-21
+ 8.950000e+1	3.572000e-21
+ 9.000000e+1	3.580000e-21
+ 9.050000e+1	3.584000e-21
+ 9.100000e+1	3.589000e-21
+ 9.150000e+1	3.592000e-21
+ 9.200000e+1	3.599000e-21
+ 9.250000e+1	3.601000e-21
+ 9.300000e+1	3.608000e-21
+ 9.350000e+1	3.611000e-21
+ 9.400000e+1	3.615000e-21
+ 9.450000e+1	3.620000e-21
+ 9.500000e+1	3.622000e-21
+ 9.550000e+1	3.628000e-21
+ 9.600000e+1	3.630000e-21
+ 9.650000e+1	3.632000e-21
+ 9.700000e+1	3.638000e-21
+ 9.750000e+1	3.640000e-21
+ 9.800000e+1	3.642000e-21
+ 9.850000e+1	3.648000e-21
+ 9.900000e+1	3.650000e-21
+ 9.950000e+1	3.652000e-21
+ 1.000000e+2	3.658000e-21
+ 1.200000e+2	3.680000e-21
+ 1.500000e+2	3.600000e-21
+ 2.000000e+2	3.400000e-21
+ 3.000000e+2	2.860000e-21
+ 4.000000e+2	2.420000e-21
+ 5.000000e+2	2.100000e-21
+ 7.000000e+2	1.660000e-21
+ 1.000000e+3	1.270000e-21
+-----------------------------
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
