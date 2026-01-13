@@ -20,12 +20,17 @@ Steijn Vervloedt
 
 ### running the project done below:
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='IR Spectrum Analysis')
+    parser = argparse.ArgumentParser(
+        usage="example: python run.py [option] [filepath or directory]",
+        description='IR Spectrum Analysis'
+    )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--batch', type=Path, help='Process all configs in directory')
     group.add_argument('--config', type=Path, help='Single config file')
     group.add_argument('--configure', type=Path,
-                       help='Configures the given directory with the config.yaml files following the rules in ...')
+                       help="Configures the given directory with the config.yaml files following the rules in "
+                            "[config_selection_rules.yaml]. The rules follow the name of either the measurement campaign "
+                            "or the respective dataset.")
     group.add_argument('--list', type=Path, help='Listing all the directories containing Bruker OPUS files')
 
     args = parser.parse_args()
