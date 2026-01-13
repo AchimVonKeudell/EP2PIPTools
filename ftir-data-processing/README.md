@@ -19,7 +19,7 @@ which allows you to use conda to control your python environment for different p
 2. Install the required packages by
 
 
-    pip install -r ./requirements.txt
+    pip install -r ./requirments.txt
 
 3. Configure SQLite database for the molecule of your choosing, see [First Steps.pdf](docs/First%20Steps.pdf)
 
@@ -69,4 +69,3 @@ No API is available yet.
 
 ## Author
 Steijn Vervloedt (Ruhr Universty Bochum, 2022-2026)
-
