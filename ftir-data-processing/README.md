@@ -58,9 +58,8 @@ the 2-digit molecular code defined by HITRAN, followed by an underscore and some
 An example of a filename would be `02_2000-2125_HITEMP2010.par`, which contains HITEMP data of the CO2 molecule 
 (with molecule id 2).
 
-Running [generate_database.py](generate_database.py) will read all available HITRAN/HITEMP data from 
-the specified HITRAN directory and store it in a sqlite database, which is used by this script to select certain 
-absorption lines to do simulations.
+In [generate_database](ftir_data_processing/generate_database) directory, you will find various scripts that generate a 
+database for various molecules. Have a look there.
  
 ## API Reference 
  
